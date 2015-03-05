@@ -1,7 +1,7 @@
 #![crate_name = "rust-github"]
 #![crate_type = "rlib"]
 
-extern crate hyper;
+extern crate curl;
 
 
 pub use github::Github;

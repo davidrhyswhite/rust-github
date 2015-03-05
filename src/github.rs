@@ -1,6 +1,7 @@
-extern crate hyper;
+extern crate curl;
 
-use hyper::Client;
+use std::str;
+use curl::http;
 
 pub struct Github;
 
@@ -10,14 +11,17 @@ impl Github {
 
     pub fn user(self) {
         println!("Getting user octocat");
-        let mut client = Client::new();
 
-        let mut res = match client.get("https://api.github.com/users/octocat").send() {
-            Ok(res) => res,
-            Err(err) => panic!("Failed to connect: {:?}", err)
-        };        
-        
-        
-        println!("Response: {:?}", res.status_raw());
+        let res = http::handle()
+            .get("https://api.github.com/users/octocat")
+            .header("User-Agent", "Rust-Github-Client")
+            .exec().unwrap();
+         
+        let body = match str::from_utf8(res.get_body()) {
+            Ok(b) => b,
+            Err(..) => "Errors parsing body"
+        };
+
+        println!("Body: {:?}", body);
     }
 }
