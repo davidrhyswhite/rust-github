@@ -1,5 +1,5 @@
 #![deny(warnings)]
-extern crate "rust-github" as github;
+extern crate github;
 
 use github::Github;
 

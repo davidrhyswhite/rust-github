@@ -1,4 +1,4 @@
-#![crate_name = "rust-github"]
+#![crate_name = "github"]
 #![crate_type = "rlib"]
 
 extern crate curl;
