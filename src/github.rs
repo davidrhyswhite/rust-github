@@ -9,11 +9,12 @@ impl Github {
     // Create an instance of Github
     pub fn new() -> Github { Github }
 
-    pub fn user(self) {
-        println!("Getting user octocat");
+    pub fn user(self, name: &str) {
+        let mut url = "https://api.github.com/users/".to_string();
+        url.push_str(name);
 
         let res = http::handle()
-            .get("https://api.github.com/users/octocat")
+            .get(url)
             .header("User-Agent", "Rust-Github-Client")
             .exec().unwrap();
          

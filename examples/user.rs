@@ -5,5 +5,5 @@ use github::Github;
 
 fn main() {
     let github = Github::new();
-    github.user();
+    github.user("octocat");
 }
