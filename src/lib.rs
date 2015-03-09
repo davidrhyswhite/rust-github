@@ -3,7 +3,20 @@
 
 extern crate curl;
 
+use client::Client;
+use user::UserService;
 
-pub use github::Github;
-mod github;
 
+pub struct Github {
+    pub users: UserService,
+}
+
+impl Github {
+    pub fn new() -> Github {
+        let client = Client;
+        Github { users: UserService { client: client } }
+    }
+}
+
+mod client;
+mod user;
