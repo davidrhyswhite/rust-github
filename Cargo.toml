@@ -4,5 +4,9 @@ name = "github"
 version = "0.0.1"
 authors = ["David White <david.white@spry-soft.com>"]
 
+[[bin]]
+
+name = "github"
+
 [dependencies]
 curl = "*"
