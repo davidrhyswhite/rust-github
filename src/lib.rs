@@ -1,7 +1,7 @@
 #![crate_name = "github"]
 #![crate_type = "rlib"]
 
-extern crate curl;
+// extern crate curl;
 
 use client::Client;
 use user::UserService;
