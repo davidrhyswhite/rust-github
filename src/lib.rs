@@ -6,7 +6,6 @@ extern crate curl;
 use client::Client;
 use user::UserService;
 
-
 pub struct Github {
     pub users: UserService,
 }
@@ -14,9 +13,11 @@ pub struct Github {
 impl Github {
     pub fn new() -> Github {
         let client = Client;
-        Github { users: UserService { client: client } }
+        Github { 
+            users: UserService::new(client),
+        }
     }
 }
 
-mod client;
-mod user;
+pub mod client;
+pub mod user;
