@@ -6,7 +6,7 @@ Rust based library for interacting with the Github API. This is just a practice 
 
 ### Get a user
 
-This request will return a single `gitHub::users::User` struct.
+This request will return a single `github::users::User` struct.
 
 ```rust
 extern crate github;
