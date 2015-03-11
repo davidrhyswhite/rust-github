@@ -6,13 +6,19 @@ Rust based library for interacting with the Github API. This is just a practice 
 
 ### Get a user
 
+This request will return a single `gitHub::users::User` struct.
+
 ```rust
 extern crate github;
 
 use github::Github;
 
+
 fn main() {
     let github = Github::new();
-    github.user("octocat");
+    let user = github.users.get("octocat");
+    println!("Name: {:?}", user.name);
+    println!("Email: {:?}", user.email);
+    println!("Location: {:?}", user.location);
 }
 ```
