@@ -5,7 +5,7 @@ extern crate curl;
 extern crate serialize;
 
 use client::Client;
-use user::UserService;
+use users::UserService;
 
 pub struct Github {
     pub users: UserService,
@@ -21,4 +21,4 @@ impl Github {
 }
 
 pub mod client;
-pub mod user;
+pub mod users;
