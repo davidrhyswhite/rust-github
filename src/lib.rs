@@ -1,7 +1,8 @@
 #![crate_name = "github"]
 #![crate_type = "rlib"]
-
+#![feature(rustc_private, core)]
 extern crate curl;
+extern crate serialize;
 
 use client::Client;
 use user::UserService;

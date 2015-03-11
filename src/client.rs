@@ -6,7 +6,7 @@ use curl::http;
 pub struct Client;
 
 impl Client {
-    pub fn request(self, url: &str) {
+    pub fn request(self, url: &str) -> String {
         let res = http::handle()
             .get(url)
             .header("User-Agent", "Rust-Github-Client")
@@ -17,6 +17,6 @@ impl Client {
             Err(..) => "Unable to parse"
         };
 
-        println!("{:?}", body);
-    } 
+        return body.to_string();
+    }
 }
