@@ -27,7 +27,7 @@ fn main() {
 
 Get a list of repositories by user, exposes a `Vec<github::repositories::Repository>`.
 
-```
+```rust
 let github = Github::new();
 let repositories = github.repositories.by_user("octocat");
 for repo in repositories.iter() {
