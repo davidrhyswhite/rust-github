@@ -1,7 +1,7 @@
 #[allow(unused_attributes)]
-extern crate serialize;
+//extern crate "rustc-serialize" as rustc_serialize;
 
-use serialize::json;
+use rustc_serialize::json;
 use client::Client;
 
 pub struct UserService {
@@ -27,7 +27,7 @@ impl UserService {
 }
 
 #[allow(dead_code)]
-#[derive(Decodable)]
+#[derive(RustcDecodable)]
 pub struct User {
     pub login: String,
     pub id: i32,

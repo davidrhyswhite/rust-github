@@ -1,7 +1,7 @@
 #[allow(unused_attributes)]
-extern crate serialize;
+//extern crate "rustc-serialize" as rustc_serialize;
 
-use serialize::json;
+use rustc_serialize::json;
 use client::Client;
 
 pub struct RepositoryService {
@@ -28,7 +28,7 @@ impl RepositoryService {
 }
 
 #[allow(dead_code)]
-#[derive(Decodable)]
+#[derive(RustcDecodable)]
 pub struct Repository {
     pub name: String,
     pub full_name: String,

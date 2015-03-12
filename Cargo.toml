@@ -6,3 +6,4 @@ authors = ["David White <david.white@spry-soft.com>"]
 
 [dependencies]
 curl = "*"
+rustc-serialize = "0.2"
