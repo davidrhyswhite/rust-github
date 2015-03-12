@@ -22,3 +22,15 @@ fn main() {
     println!("Location: {:?}", user.location);
 }
 ```
+
+### Get all repositories by user
+
+Get a list of repositories by user, exposes a `Vec<github::repositories::Repository>`.
+
+```
+let github = Github::new();
+let repositories = github.repositories.by_user("octocat");
+for repo in repositories.iter() {
+    println!("{:?}", repo.name);
+}
+```
