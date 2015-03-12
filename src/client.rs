@@ -3,6 +3,7 @@ extern crate curl;
 use std::str;
 use curl::http;
 
+#[derive(Copy)]
 pub struct Client;
 
 impl Client {

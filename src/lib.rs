@@ -6,9 +6,11 @@ extern crate serialize;
 
 use client::Client;
 use users::UserService;
+use repositories::RepositoryService;
 
 pub struct Github {
     pub users: UserService,
+    pub repositories: RepositoryService,
 }
 
 impl Github {
@@ -16,9 +18,11 @@ impl Github {
         let client = Client;
         Github { 
             users: UserService::new(client),
+            repositories: RepositoryService::new(client),
         }
     }
 }
 
 pub mod client;
 pub mod users;
+pub mod repositories;
