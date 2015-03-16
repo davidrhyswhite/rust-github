@@ -1,5 +1,4 @@
 #[allow(unused_attributes)]
-//extern crate "rustc-serialize" as rustc_serialize;
 
 use rustc_serialize::json;
 use client::Client;
@@ -17,9 +16,9 @@ impl UserService {
     pub fn get(self, name: &str) -> User {
         let mut url = "https://api.github.com/users/".to_string();
         url.push_str(name);
-        
+
         let req = self.client.request(url.as_slice());
-        
+
         let user: User = json::decode(req.as_slice()).unwrap();
 
         return user;
