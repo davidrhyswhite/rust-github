@@ -9,7 +9,7 @@ Rust based library for interacting with the Github API. This is just a practice 
 This request will return a single `github::users::User` struct.
 
 ```rust
-extern crate github;
+extern crate "rust-github" as github;
 
 use github::Github;
 
