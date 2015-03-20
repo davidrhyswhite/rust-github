@@ -1,11 +1,10 @@
 [package]
 
-name = "github"
+name = "rust-github"
 version = "0.1.0"
 description = "Rust based library for interacting with the Github v3 API."
 readme = "README.md"
 repository = "https://github.com/davidrhyswhite/rust-github"
-documentation = "http://ironframework.io/doc/iron/"
 license = "MIT"
 authors = ["David White <david.white@spry-soft.com>"]
 
