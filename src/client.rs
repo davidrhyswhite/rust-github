@@ -9,7 +9,7 @@ pub struct Client;
 
 impl Client {
 
-    pub fn new(headers: HashMap<String, String>) {
+    pub fn add_header(self, key: &str, value: &str) {
         
     }
 

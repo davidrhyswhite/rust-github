@@ -9,6 +9,7 @@ use users::UserService;
 use repositories::RepositoryService;
 
 pub struct Github {
+    client: Client,
     pub users: UserService,
     pub repositories: RepositoryService,
 }
@@ -16,10 +17,16 @@ pub struct Github {
 impl Github {
     pub fn new() -> Github {
         let client = Client;
-        Github { 
+        Github {
+            client: client,
             users: UserService::new(client),
             repositories: RepositoryService::new(client),
         }
+    }
+
+    pub fn header(self, key: &str, value: &str) -> Github {
+       self.client.add_header(key, value);
+       return self;
     }
 }
 
