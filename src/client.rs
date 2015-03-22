@@ -2,11 +2,17 @@ extern crate curl;
 
 use std::str;
 use curl::http;
+use std::collections::hash_map::HashMap;
 
 #[derive(Copy)]
 pub struct Client;
 
 impl Client {
+
+    pub fn new(headers: HashMap<String, String>) {
+        
+    }
+
     pub fn request(self, url: &str) -> String {
         let res = http::handle()
             .get(url)
