@@ -1,6 +1,5 @@
 #![crate_name = "rust_github"]
 #![crate_type = "rlib"]
-#![feature(core)]
 extern crate curl;
 extern crate rustc_serialize;
 
