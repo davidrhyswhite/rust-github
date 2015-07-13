@@ -4,33 +4,24 @@ Rust based library for interacting with the Github API. This is just a practice 
 
 ## Examples
 
-### Get a user
+### Get User Information & Repositories
 
 This request will return a single `github::users::User` struct.
 
 ```rust
-extern crate "rust-github" as github;
+extern crate rust_github;
 
-use github::Github;
-
+use rust_github::Github;
 
 fn main() {
     let github = Github::new();
-    let user = github.users.get("octocat");
+    let user = github.users.get("sriharshakappala");
+    let repositories = github.repositories.by_user("sriharshakappala");
     println!("Name: {:?}", user.name);
     println!("Email: {:?}", user.email);
     println!("Location: {:?}", user.location);
-}
-```
-
-### Get all repositories by user
-
-Get a list of repositories by user, exposes a `Vec<github::repositories::Repository>`.
-
-```rust
-let github = Github::new();
-let repositories = github.repositories.by_user("octocat");
-for repo in repositories.iter() {
-    println!("{:?}", repo.name);
+    for repo in repositories.iter() {
+        println!("{:?}", repo.name);
+    }
 }
 ```
