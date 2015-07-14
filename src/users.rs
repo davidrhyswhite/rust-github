@@ -17,9 +17,9 @@ impl UserService {
         let mut url = "https://api.github.com/users/".to_string();
         url.push_str(name);
 
-        let req = self.client.request(url.as_slice());
+        let req = self.client.request(url.as_ref());
 
-        let user: User = json::decode(req.as_slice()).unwrap();
+        let user: User = json::decode(req.as_ref()).unwrap();
 
         return user;
     }

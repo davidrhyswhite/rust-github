@@ -1,8 +1,7 @@
-#![crate_name = "rust-github"]
+#![crate_name = "rust_github"]
 #![crate_type = "rlib"]
-#![feature(core)]
 extern crate curl;
-extern crate "rustc-serialize" as rustc_serialize;
+extern crate rustc_serialize;
 
 use client::Client;
 use users::UserService;
@@ -16,7 +15,7 @@ pub struct Github {
 impl Github {
     pub fn new() -> Github {
         let client = Client;
-        Github { 
+        Github {
             users: UserService::new(client),
             repositories: RepositoryService::new(client),
         }
