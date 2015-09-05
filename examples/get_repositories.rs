@@ -1,4 +1,4 @@
-extern crate "rust-github" as github;
+extern crate rust_github as github;
 
 use github::Github;
 

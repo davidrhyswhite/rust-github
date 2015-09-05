@@ -17,9 +17,9 @@ impl UserService {
         let mut url = "https://api.github.com/users/".to_string();
         url.push_str(name);
 
-        let req = self.client.request(url.as_slice());
+        let req = self.client.request(&url);
 
-        let user: User = json::decode(req.as_slice()).unwrap();
+        let user: User = json::decode(&req).unwrap();
 
         return user;
     }
@@ -49,7 +49,7 @@ pub struct User {
     pub blog: String,
     pub location: String,
     pub email: String,
-    pub hireable: bool,
+    pub hireable: Option<bool>,
     pub bio: Option<String>,
     pub public_repos: i32,
     pub public_gists: i32,

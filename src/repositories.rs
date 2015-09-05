@@ -18,9 +18,9 @@ impl RepositoryService {
         url.push_str(username);
         url.push_str("/repos");
 
-        let req = self.client.request(url.as_slice());
+        let req = self.client.request(&url);
 
-        let repos: Vec<Repository> = json::decode(req.as_slice()).unwrap();
+        let repos: Vec<Repository> = json::decode(&req).unwrap();
 
         return repos;
     }

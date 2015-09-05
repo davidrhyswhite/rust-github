@@ -6,6 +6,7 @@ use std::collections::hash_map::HashMap;
 
 #[derive(Copy)]
 pub struct Client;
+#[derive(Copy, Clone)]
 
 impl Client {
 
