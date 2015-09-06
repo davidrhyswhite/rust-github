@@ -7,6 +7,7 @@ extern crate rustc_serialize;
 use client::Client;
 use users::UserService;
 use repositories::RepositoryService;
+use std::collections::hash_map::HashMap;
 
 pub struct Github {
     client: Client,
@@ -16,7 +17,7 @@ pub struct Github {
 
 impl Github {
     pub fn new() -> Github {
-        let client = Client;
+        let client = Client { headers: HashMap::new() };
         Github {
             client: client,
             users: UserService::new(client),
